@@ -1,16 +1,27 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+} from "react-router-dom";
+
+import AuthLayout from "../layouts/AuthLayout";
+import DashboardLayout from "../layouts/DashboardLayout";
 
 import Login from "../pages/auth/Login";
-import Home from "../pages/app/Home";
-import NotFound from "../pages/app/NotFound";
+
 
 export default function AppRoutes() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="*" element={<NotFound />} />
+
+                <Route path="/auth" element={<AuthLayout />}>
+                    <Route path="login" element={<Login />} />
+                </Route>
+
+                <Route path="/app" element={<DashboardLayout />}>
+                </Route>
+
             </Routes>
         </BrowserRouter>
     );
