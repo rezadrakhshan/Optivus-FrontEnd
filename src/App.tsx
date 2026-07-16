@@ -1,11 +1,7 @@
+import AppRoutes from "./routes";
+
 function App() {
-  return (
-    <div className="flex h-screen items-center justify-center bg-zinc-950">
-      <h1 className="text-5xl font-bold text-white">
-        Optivus
-      </h1>
-    </div>
-  );
+    return <AppRoutes />;
 }
 
 export default App;
