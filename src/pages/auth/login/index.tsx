@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Smartphone } from "lucide-react";
 
+import Hero from "../../../components/hero/Hero";
 import AuthCard from "../../../components/auth/AuthCard";
 import Logo from "../../../components/common/Logo";
 import Button from "../../../components/ui/button";
@@ -10,40 +10,65 @@ export default function Login() {
   const [phone, setPhone] = useState("");
 
   return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-zinc-950 px-4">
-      {/* Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-blue-600/15 blur-[140px]" />
+    <main className="relative min-h-screen overflow-hidden bg-zinc-950">
 
-        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-violet-600/15 blur-[140px]" />
+      {/* Background */}
+      <div className="absolute inset-0">
+
+        <div className="absolute -left-40 -top-40 h-96 w-96 rounded-full bg-blue-600/10 blur-[160px]" />
+
+        <div className="absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-violet-600/10 blur-[160px]" />
+
       </div>
 
-      <AuthCard>
-        <Logo />
+      {/* Content */}
 
-        <div className="mt-10 space-y-6">
-          <div className="relative">
-            <Smartphone
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500"
-              size={18}
-            />
+      <div className="grid min-h-screen lg:grid-cols-5">
 
-            <Input
-              className="pr-12 focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500"
-            />
-          </div>
+        {/* Hero */}
 
-          <Button
-            className="hover:scale-[1.02] active:scale-95 transition-all duration-200"
-          >
-            ادامه
-          </Button>
-        </div>
+        <section className="hidden lg:col-span-3 lg:flex">
 
-        <p className="mt-8 text-center text-sm text-zinc-500">
-          برای ادامه شماره موبایل خود را وارد کنید.
-        </p>
-      </AuthCard>
+          <Hero />
+
+        </section>
+
+        {/* Login */}
+
+        <section className="col-span-2 flex items-center justify-center">
+
+          <AuthCard>
+
+            <Logo />
+
+            <div className="mt-10 space-y-5">
+
+              <Input
+                placeholder="۰۹۱۲۳۴۵۶۷۸۹"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+
+              <Button>
+
+                ادامه
+
+              </Button>
+
+            </div>
+
+            <p className="mt-8 text-center text-sm text-zinc-500">
+
+              با ادامه، کد تأیید برای شما ارسال خواهد شد.
+
+            </p>
+
+          </AuthCard>
+
+        </section>
+
+      </div>
+
     </main>
   );
 }
