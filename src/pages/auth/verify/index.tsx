@@ -14,7 +14,7 @@ export default function Verify() {
   };
 
   return (
-    <main className="relative min-h-screen bg-zinc-950">
+    <main className="relative min-h-screen overflow-hidden bg-zinc-950">
       <div className="absolute inset-0">
         <div className="absolute -left-40 -top-40 h-96 w-96 rounded-full bg-blue-600/10 blur-[160px]" />
 
@@ -34,10 +34,10 @@ export default function Verify() {
               کد ارسال شده به شماره زیر را وارد کنید
             </p>
 
-            <p className="mt-2 font-medium text-blue-400">۰۹۱۲ *** **۸۹</p>
+            <p dir="ltr" className="mt-2 font-medium text-blue-400">۰۹۱۲ *** **۸۹</p>
           </div>
 
-          <div className="mt-10">
+          <div className="mt-8 sm:mt-10">
             <OTPInput length={6} onChange={setCode} onComplete={handleVerify} />
           </div>
 

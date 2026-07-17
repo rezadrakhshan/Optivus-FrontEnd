@@ -37,7 +37,7 @@ export default function ResendTimer({
 
   if (timeLeft > 0) {
     return (
-      <p className="text-center text-sm text-zinc-500">
+      <p className="text-center text-sm text-zinc-500 mt-5">
         ارسال مجدد تا{" "}
         <span className="font-medium text-white">
           {minutes}:{seconds}

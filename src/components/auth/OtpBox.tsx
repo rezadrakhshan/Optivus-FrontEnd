@@ -12,8 +12,10 @@ const OTPBox = forwardRef<HTMLInputElement, OTPBoxProps>((props, ref) => {
       autoComplete="one-time-code"
       maxLength={1}
       className="
-                    h-14
-                    w-14
+h-12
+w-12
+sm:h-14
+sm:w-14
                     rounded-2xl
                     border
                     border-zinc-800

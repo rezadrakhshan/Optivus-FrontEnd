@@ -22,7 +22,7 @@ export default function OTPInput({
   });
 
   return (
-    <div className="flex justify-center gap-3">
+    <div dir="ltr" className="flex w-full justify-center gap-2 sm:gap-3">
       {otp.map((digit, index) => (
         <OTPBox
           key={index}
