@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Hero from "../../../components/hero/Hero";
 import AuthCard from "../../../components/auth/AuthCard";
@@ -8,6 +9,7 @@ import Input from "../../../components/ui/Input";
 
 export default function Login() {
   const [phone, setPhone] = useState("");
+  const navigate = useNavigate();
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-zinc-950">
@@ -40,7 +42,7 @@ export default function Login() {
                 onChange={(e) => setPhone(e.target.value)}
               />
 
-              <Button>ادامه</Button>
+              <Button onClick={() => navigate("/verify")}>ادامه</Button>
             </div>
 
             <p className="mt-8 text-center text-sm text-zinc-500">
