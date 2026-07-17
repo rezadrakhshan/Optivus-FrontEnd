@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Smartphone } from "lucide-react";
 
 import AuthCard from "../../../components/auth/AuthCard";
 import Logo from "../../../components/common/Logo";
@@ -11,27 +12,36 @@ export default function Login() {
   return (
     <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-zinc-950 px-4">
       {/* Background */}
-      <div className="absolute inset-0">
-        <div className="absolute left-20 top-20 h-72 w-72 rounded-full bg-blue-600/10 blur-[120px]" />
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-blue-600/15 blur-[140px]" />
 
-        <div className="absolute bottom-20 right-20 h-72 w-72 rounded-full bg-violet-600/10 blur-[120px]" />
+        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-violet-600/15 blur-[140px]" />
       </div>
 
       <AuthCard>
         <Logo />
 
         <div className="mt-10 space-y-6">
-          <Input
-            placeholder="09123456789"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
+          <div className="relative">
+            <Smartphone
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500"
+              size={18}
+            />
 
-          <Button>ادامه</Button>
+            <Input
+              className="pr-12 focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500"
+            />
+          </div>
+
+          <Button
+            className="hover:scale-[1.02] active:scale-95 transition-all duration-200"
+          >
+            ادامه
+          </Button>
         </div>
 
         <p className="mt-8 text-center text-sm text-zinc-500">
-          احراز هویت امن با استفاده از کد ورود
+          برای ادامه شماره موبایل خود را وارد کنید.
         </p>
       </AuthCard>
     </main>
