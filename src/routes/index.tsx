@@ -4,6 +4,8 @@ import AuthLayout from "../layouts/AuthLayout";
 
 import Login from "../pages/auth/login";
 import Verify from "../pages/auth/verify";
+import Home from "../pages/auth/Home";
+import DashboardLayout from "../layouts/DashboardLayout";
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +18,15 @@ export const router = createBrowserRouter([
       {
         path: "/verify",
         element: <Verify />,
+      },
+    ],
+  },
+  {
+    element: <DashboardLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
       },
     ],
   },
