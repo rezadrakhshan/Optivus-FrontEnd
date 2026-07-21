@@ -1,4 +1,4 @@
-import { Menu, CircleUserRound } from "lucide-react";
+import { Menu } from "lucide-react";
 
 interface Props {
   onMenuClick: () => void;

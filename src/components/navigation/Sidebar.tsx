@@ -23,11 +23,14 @@ export default function Sidebar({ open, onClose }: Props) {
             absolute
             right-0
             top-0
-            h-full
+            flex
+            h-screen
             w-80
-            bg-zinc-950
+            flex-col
+            overflow-hidden
             border-l
             border-zinc-800
+            bg-zinc-950
             shadow-2xl
             transition-transform
             duration-300
@@ -35,7 +38,6 @@ export default function Sidebar({ open, onClose }: Props) {
           "
         >
           <div className="flex items-center justify-between border-b border-zinc-800 p-5">
-            <h2 className="text-xl font-bold text-white">Optivus</h2>
 
             <button
               onClick={onClose}
