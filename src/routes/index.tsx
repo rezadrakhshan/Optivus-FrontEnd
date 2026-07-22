@@ -6,6 +6,7 @@ import Login from "../pages/auth/login";
 import Verify from "../pages/auth/verify";
 import Home from "../pages/auth/Home";
 import DashboardLayout from "../layouts/DashboardLayout";
+import LeadsPage from "../pages/leads/LeadPage";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/leads",
+        element: <LeadsPage />,
       },
     ],
   },
