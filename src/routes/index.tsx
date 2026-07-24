@@ -7,6 +7,7 @@ import Verify from "../pages/auth/verify";
 import Home from "../pages/auth/Home";
 import DashboardLayout from "../layouts/DashboardLayout";
 import LeadsPage from "../pages/leads/LeadPage";
+import LeadDetailsPage from "../pages/leads/LeadDetailPage";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path: "/leads",
         element: <LeadsPage />,
+      },
+      {
+        path: "leads/:id",
+        element: <LeadDetailsPage />,
       },
     ],
   },

@@ -1,6 +1,5 @@
-import { EllipsisVertical } from "lucide-react";
-
 import LeadBadge from "./LeadBadge";
+import { useNavigate } from "react-router-dom";
 
 import { leads } from "../../mock/leads";
 
@@ -8,6 +7,7 @@ import { leadStatusMap, leadTagMap, leadTypeMap } from "../../constants/lead";
 import LeadRowActions from "./LeadRowActions";
 
 export default function LeadsTable() {
+  const navigate = useNavigate();
   return (
     <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
       <table className="w-full">
@@ -58,7 +58,7 @@ export default function LeadsTable() {
 
                 <td className="px-6 py-5">
                   <LeadRowActions
-                    onView={() => {}}
+                    onView={() => navigate(`/leads/${lead.id}`)}
                     onEdit={() => {}}
                     onFollowUp={() => {}}
                     onDelete={() => {}}

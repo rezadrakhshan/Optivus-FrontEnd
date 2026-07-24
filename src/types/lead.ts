@@ -26,4 +26,5 @@ export interface Lead {
   status: LeadStatus;
   tag: LeadTag;
   nextFollowUp?: string;
+  notes?: string;
 }

@@ -1,14 +1,4 @@
-import { LeadType, LeadStatus, LeadTag } from "../types/lead";
-
-export interface Lead {
-  id: string;
-  trackingCode: number;
-  category: string;
-  type: LeadType;
-  status: LeadStatus;
-  tag: LeadTag;
-  nextFollowUp?: string;
-}
+import { type Lead } from "../types/lead";
 
 export const leads: Lead[] = [
   {
@@ -18,6 +8,7 @@ export const leads: Lead[] = [
     type: "CARBODY",
     status: "WON",
     tag: "RENEWED",
+    notes: "کاربر برای تمدید بیمه در هفته آینده تماس بگیرد.",
   },
   {
     id: "2",
@@ -26,5 +17,6 @@ export const leads: Lead[] = [
     type: "THIRDPARTY",
     status: "LOST",
     tag: "FOLLOWUP",
+    notes: "کاربر برای تمدید بیمه در هفته آینده تماس بگیرد.",
   },
 ];
