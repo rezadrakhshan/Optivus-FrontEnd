@@ -19,4 +19,12 @@ export const leads: Lead[] = [
     status: "WON",
     tag: "RENEWED",
   },
+  {
+    id: "2",
+    trackingCode: 2121212,
+    category: "شخص ثالث",
+    type: "THIRDPARTY",
+    status: "LOST",
+    tag: "FOLLOWUP",
+  },
 ];

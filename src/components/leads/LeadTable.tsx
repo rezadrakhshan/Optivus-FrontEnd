@@ -5,6 +5,7 @@ import LeadBadge from "./LeadBadge";
 import { leads } from "../../mock/leads";
 
 import { leadStatusMap, leadTagMap, leadTypeMap } from "../../constants/lead";
+import LeadRowActions from "./LeadRowActions";
 
 export default function LeadsTable() {
   return (
@@ -56,9 +57,12 @@ export default function LeadsTable() {
                 </td>
 
                 <td className="px-6 py-5">
-                  <button className="rounded-lg p-2 text-zinc-400 transition hover:bg-zinc-700 hover:text-white">
-                    <EllipsisVertical size={18} />
-                  </button>
+                  <LeadRowActions
+                    onView={() => {}}
+                    onEdit={() => {}}
+                    onFollowUp={() => {}}
+                    onDelete={() => {}}
+                  />
                 </td>
               </tr>
             );
