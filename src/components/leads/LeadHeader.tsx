@@ -1,6 +1,9 @@
 import { Plus } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
 
 export default function LeadsHeader() {
+  const navigate = useNavigate();
   return (
     <div className="flex items-center justify-between">
       <div>
@@ -11,7 +14,10 @@ export default function LeadsHeader() {
         </p>
       </div>
 
-      <button className="flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-sm font-medium text-white transition hover:bg-blue-700">
+      <button
+        onClick={() => navigate("/leads/create")}
+        className="flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-sm font-medium text-white transition hover:bg-blue-700"
+      >
         <Plus size={18} />
         ایجاد لید جدید
       </button>

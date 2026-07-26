@@ -8,6 +8,7 @@ import Home from "../pages/auth/Home";
 import DashboardLayout from "../layouts/DashboardLayout";
 import LeadsPage from "../pages/leads/LeadPage";
 import LeadDetailsPage from "../pages/leads/LeadDetailPage";
+import CreateLeadPage from "../pages/leads/CreateLeadPage";
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
       {
         path: "leads/:id",
         element: <LeadDetailsPage />,
+      },
+      {
+        path: "leads/create",
+        element: <CreateLeadPage />,
       },
     ],
   },
