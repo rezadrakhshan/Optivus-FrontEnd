@@ -9,7 +9,7 @@ export const leadFormSchema = z.object({
       message: "کد رهگیری معتبر نیست",
     }),
 
-  category: z.string().min(1, "دسته‌بندی الزامی است"),
+  categoryId: z.string().min(1, "دسته‌بندی الزامی است"),
   type: z.enum(["THIRDPARTY", "CARBODY"]),
   status: z.enum(["WON", "LOST"]),
   tag: z.enum(["RENEWED", "FOLLOWUP"]),

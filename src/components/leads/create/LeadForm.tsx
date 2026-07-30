@@ -1,10 +1,13 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
+
 import {
   leadFormSchema,
   type LeadFormValues,
 } from "../../../schemas/leads/create/lead-form.schema";
+import CategorySelect from "../../form/CategorySelect";
+import { categories } from "../../../mock/categories";
 
 type Props = {
   mode: "create" | "edit";
@@ -22,7 +25,7 @@ export default function LeadForm({ mode, defaultValues }: Props) {
     resolver: zodResolver(leadFormSchema),
     defaultValues: {
       trackingCode: undefined,
-      category: "",
+      categoryId: "",
       type: "THIRDPARTY",
       status: "WON",
       tag: "RENEWED",
@@ -35,6 +38,7 @@ export default function LeadForm({ mode, defaultValues }: Props) {
   const type = watch("type");
   const status = watch("status");
   const tag = watch("tag");
+  const categoryId = watch("categoryId");
 
   const onSubmit = async (data: LeadFormValues) => {
     console.log(data);
@@ -55,12 +59,15 @@ export default function LeadForm({ mode, defaultValues }: Props) {
           />
         </Field>
 
-        <Field label="دسته‌بندی" error={errors.category?.message}>
-          <input
-            type="text"
-            {...register("category")}
-            className="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-white outline-none transition focus:border-blue-500"
-            placeholder="بیمه بدنه"
+        <Field label="دسته‌بندی" error={errors.categoryId?.message}>
+          <CategorySelect
+            categories={categories}
+            value={categoryId}
+            onChange={(value) =>
+              setValue("categoryId", value, {
+                shouldValidate: true,
+              })
+            }
           />
         </Field>
 
