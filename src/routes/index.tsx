@@ -9,6 +9,7 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import LeadsPage from "../pages/leads/LeadPage";
 import LeadDetailsPage from "../pages/leads/LeadDetailPage";
 import CreateLeadPage from "../pages/leads/CreateLeadPage";
+import EditLeadPage from "../pages/leads/EditLeadPage";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
       {
         path: "leads/create",
         element: <CreateLeadPage />,
+      },
+      {
+        path: "leads/:id/edit",
+        element: <EditLeadPage />,
       },
     ],
   },

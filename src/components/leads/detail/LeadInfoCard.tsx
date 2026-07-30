@@ -20,7 +20,7 @@ export default function LeadInfoCard({ lead }: Props) {
       <div className="space-y-5">
         <Row title="کد رهگیری">#{lead.trackingCode}</Row>
 
-        <Row title="دسته‌بندی">{lead.category}</Row>
+        <Row title="دسته‌بندی">{lead.categoryName}</Row>
 
         <Row title="نوع">
           <LeadBadge color={leadTypeMap[lead.type].color}>

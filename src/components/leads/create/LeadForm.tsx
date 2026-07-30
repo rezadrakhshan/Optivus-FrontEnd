@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-
 import {
   leadFormSchema,
   type LeadFormValues,
@@ -12,9 +11,10 @@ import { categories } from "../../../mock/categories";
 type Props = {
   mode: "create" | "edit";
   defaultValues?: Partial<LeadFormValues>;
+  onSubmit: (data: LeadFormValues) => void | Promise<void>;
 };
 
-export default function LeadForm({ mode, defaultValues }: Props) {
+export default function LeadForm({ mode, defaultValues, onSubmit }: Props) {
   const {
     register,
     handleSubmit,
@@ -39,10 +39,6 @@ export default function LeadForm({ mode, defaultValues }: Props) {
   const status = watch("status");
   const tag = watch("tag");
   const categoryId = watch("categoryId");
-
-  const onSubmit = async (data: LeadFormValues) => {
-    console.log(data);
-  };
 
   return (
     <form

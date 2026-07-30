@@ -21,7 +21,8 @@ export type LeadTag = (typeof LeadTag)[keyof typeof LeadTag];
 export interface Lead {
   id: string;
   trackingCode: number;
-  category: string;
+  categoryId: string;
+  categoryName:string;
   type: LeadType;
   status: LeadStatus;
   tag: LeadTag;

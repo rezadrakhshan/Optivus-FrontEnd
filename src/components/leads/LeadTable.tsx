@@ -38,7 +38,7 @@ export default function LeadsTable() {
                   #{lead.trackingCode}
                 </td>
 
-                <td className="px-6 py-5 text-zinc-300">{lead.category}</td>
+                <td className="px-6 py-5 text-zinc-300">{lead.categoryName}</td>
 
                 <td className="px-6 py-5">
                   <LeadBadge color={type.color}>{type.label}</LeadBadge>

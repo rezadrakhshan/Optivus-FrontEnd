@@ -24,7 +24,15 @@ export default function CreateLeadPage() {
         </div>
       </div>
 
-      <LeadForm mode="create" />
+      <LeadForm
+        mode="create"
+        onSubmit={async (data) => {
+          console.log("CREATE", data);
+
+          // TODO:
+          // await createLead(data)
+        }}
+      />
     </div>
   );
 }
