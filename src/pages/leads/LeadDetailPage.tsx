@@ -1,5 +1,5 @@
 import { ArrowRight, Pencil } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import LeadInfoCard from "../../components/leads/detail/LeadInfoCard";
 import NotesCard from "../../components/leads/detail/NotesCard";
@@ -15,13 +15,10 @@ export default function LeadDetailsPage() {
 
   return (
     <div className="space-y-6">
-
       {/* Header */}
 
       <div className="flex items-center justify-between">
-
         <div>
-
           <button
             onClick={() => navigate(-1)}
             className="
@@ -43,13 +40,11 @@ export default function LeadDetailsPage() {
             لید #{lead.trackingCode}
           </h1>
 
-          <p className="mt-2 text-zinc-400">
-            مشاهده جزئیات لید
-          </p>
-
+          <p className="mt-2 text-zinc-400">مشاهده جزئیات لید</p>
         </div>
 
-        <button
+        <Link
+          to={`/leads/${lead.id}/edit`}
           className="
             flex
             items-center
@@ -66,32 +61,22 @@ export default function LeadDetailsPage() {
         >
           <Pencil size={18} />
           ویرایش لید
-        </button>
-
+        </Link>
       </div>
 
       {/* Content */}
 
       <div className="grid gap-6 xl:grid-cols-3">
-
         <div className="space-y-6">
-
           <LeadInfoCard lead={lead} />
 
           <NotesCard notes={lead.notes} />
-
         </div>
 
         <div className="xl:col-span-2">
-
-          <ActivityTimeline
-            activities={activities}
-          />
-
+          <ActivityTimeline activities={activities} />
         </div>
-
       </div>
-
     </div>
   );
 }
