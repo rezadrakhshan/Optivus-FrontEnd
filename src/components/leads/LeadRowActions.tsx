@@ -13,6 +13,7 @@ import {
   Pencil,
   Trash2,
 } from "lucide-react";
+import { showToast } from "../../utils/toast";
 
 interface Props {
   leadId: string;
@@ -91,6 +92,9 @@ export default function RowActions({ leadId }: Props) {
           <MenuItem>
             {({ focus }) => (
               <button
+              onClick={() => {
+                showToast("error","لید با موفقیت حذف شد")
+              }}
                 className={`flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm text-red-400 ${
                   focus ? "bg-red-500/10" : ""
                 }`}
